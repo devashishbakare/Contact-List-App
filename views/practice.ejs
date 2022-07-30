@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>
+            <%= locals.text%>
+        </title>
+    </head>
+    <body>
+        <h1>This text from the practice ejs file</h1>
+        <!-- for Loops -->
+        <ul>
+            <li>
+                <% for(let i = 1; i <= 5; i++){ %>
+                    <%= i %>
+                <% } %>
+            </li>
+        </ul>
+
+
+        <ul>
+    <!-- conditonals -->
+    <!-- //text will not we work here -->
+    <!-- if we want to use the play text like we use in console we have to use h1 or p -->
+    
+            <% if (true) { %>
+                <p>yes it is true</p>
+             <% }else { %>
+                 <%=!true%>
+             <% } %>
+
+        </ul>
+        <!-- while loop-->
+
+        <ul>
+            <%let j = 5%>
+            <%while(j <= 10){%>
+                <%=j++%>
+            <%}%>
+        </ul>
+
+    </body>
+</html>

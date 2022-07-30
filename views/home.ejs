@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>
+            <%= text %>
+        </title>
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/home.css">
+    </head>
+    <body>
+        <div id = "container">
+            <div id = "Heading">
+                <h1 id = "text">Contact List</h1>
+            </div>
+    
+            <% for(let i of contact_List){ %>
+                <div class = "details">
+                    
+                    <div class = "icon">
+                        <!-- <i class = "fas fa-address-book fa-3x"></i> -->
+                        <img src="/images/male.png" alt="male">
+                    </div>
+                
+                    <div class = "call-details"><!-- same name as in db -->
+                        <div><p id = "name"><%= i.name %></p></div> 
+                        <div><p id = "pno"><%= i.phone %></p></div>
+                    </div>   
+
+                    <div class = "delete-icon">
+                        <a href="/delete-contact/?id=<%= i._id %>">
+                            <i class="fas fa-trash fa-2x"></i>
+                        </a>
+                    </div>
+            
+                </div>
+            <% } %>  
+        </div>
+
+        <form action="/add-contact" method = "POST">
+            <input type="text" name = "name" required placeholder = "Enter Name" class="get-name">
+            <input type="text" name = "phoneNo" required placeholder="Enter Number" class="get-number">
+            <button type = "submit" class="contact-feedback">Add Contact</button>
+        </form>
+
+        <script type = "text/javascript" src = "/js/home.js"></script>
+
+    </body>
+</html>
